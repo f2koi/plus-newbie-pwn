@@ -1,0 +1,21 @@
+FROM lemonwater/newbie-pwn-base:latest
+
+ARG prob port
+EXPOSE ${port}
+
+# Copy challenge files
+COPY --chown=plus ./${prob}/bin/${prob} ./${prob}/flag /home/plus/
+RUN chmod u+x /home/plus/${prob}
+
+# Copy xinetd service file
+COPY ./${prob}/setup_files/chall.xinetd /etc/xinetd.d/chall
+RUN chmod ugo-wx /etc/xinetd.d/chall
+
+# Run a setup script if it exists
+COPY ./${prob}/setup_files/ /home/plus/
+RUN if [ -e /home/plus/setup_files/setup.sh ]; then /home/plus/setup_files/setup.sh; fi
+RUN rm -rf /home/plus/setup_files/
+
+USER plus
+
+CMD ["xinetd", "-dontfork"]

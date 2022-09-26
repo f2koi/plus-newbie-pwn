@@ -1,0 +1,1 @@
+docker build -f base/Dockerfile.base -t lemonwater/newbie-pwn-base base

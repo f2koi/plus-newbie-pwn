@@ -1,0 +1,9 @@
+{{prob}}:
+  build:
+    context: ./challs
+    dockerfile: ./Dockerfile.prob
+    args:
+      prob: {{prob}}
+      port: {{port}}
+  ports:
+    - '{{port}}:{{port}}'

@@ -1,0 +1,16 @@
+FROM ubuntu:20.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && \
+    apt-get install -y \
+    vim \
+    python3 \
+    python3-pip \
+    gcc \
+    gcc-multilib \
+    gdb \
+    libc6-dbg \
+    xinetd
+
+RUN useradd -m -s /bin/bash plus
