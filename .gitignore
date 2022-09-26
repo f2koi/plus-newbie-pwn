@@ -1,0 +1,6 @@
+compose.yaml
+**/flag
+**/flag.txt
+**/bin
+**/**.py
+**/**.xinetd
