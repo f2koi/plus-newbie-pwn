@@ -6,6 +6,8 @@
 
 ## Build
 ### For the first time
+Add the name of the problem and the port that will be used to `templates/challs_and_ports.txt`.
+
 ```bash
 # Generate files(xinetd and compose files) from the templates.
 bash templates/scripts/instantiate-all.sh
@@ -18,6 +20,8 @@ docker-compose build --no-cache
 ```
 
 ### Whenever you added a new challenge or modified an existing challenge
+Add the name of the problem and the port that will be used to `templates/challs_and_ports.txt`.
+
 ```bash
 # Re-generate files(xinetd and compose files) from the templates.
 bash templates/scripts/instantiate-all.sh
