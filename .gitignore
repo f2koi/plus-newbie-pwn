@@ -5,3 +5,4 @@ compose.yaml
 **/**.py
 **/**.xinetd
 .vscode
+templates/challs_and_ports.txt
