@@ -10,12 +10,13 @@ void setup() {
 }
 
 void win() {
+    // call this function to get the flag!
     system("cat /home/plus/flag");
 }
 
-int vuln() {
+int vulnerable() {
     char name[0x20];
-    printf("addr(name): %p\n", name);
+    printf("address_of( char name[0x20] ): %p\n", name);
     printf("pwn me: ");
     read(0, name, 0x28);
 }
@@ -23,5 +24,5 @@ int vuln() {
 int main() {
     char dummy[0x10];
     setup();
-    vuln();
+    vulnerable();
 }
